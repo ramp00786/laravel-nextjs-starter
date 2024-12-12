@@ -1,12 +1,22 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter for redirecting
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 export default function LogoutButton() {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const router = useRouter();
+  
+
+
+  const setCookie = (name, value, days) => {
+    const expires = new Date();
+    expires.setDate(expires.getDate() + days);
+    document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}; Secure`;
+};
+  
 
   // Logout function
   const logout = () => {
@@ -15,6 +25,7 @@ export default function LogoutButton() {
 
     // Remove the token from localStorage
     localStorage.removeItem("auth_token");
+    setCookie('auth_token', '', 7);
 
     // Optionally, clear any other user data (session, cookies, etc.)
     // sessionStorage.removeItem("user_data"); // Example if you're using sessionStorage

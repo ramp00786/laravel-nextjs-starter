@@ -80,12 +80,18 @@ function LogoutButton() {
     _s();
     const [isLoggingOut, setIsLoggingOut] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const setCookie = (name, value, days)=>{
+        const expires = new Date();
+        expires.setDate(expires.getDate() + days);
+        document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}; Secure`;
+    };
     // Logout function
     const logout = ()=>{
         // Set logging out state to true to disable button during logout process
         setIsLoggingOut(true);
         // Remove the token from localStorage
         localStorage.removeItem("auth_token");
+        setCookie('auth_token', '', 7);
         // Optionally, clear any other user data (session, cookies, etc.)
         // sessionStorage.removeItem("user_data"); // Example if you're using sessionStorage
         // Redirect user to the login or home page
@@ -103,17 +109,17 @@ function LogoutButton() {
                 children: isLoggingOut ? "Logging out..." : "Logout"
             }, void 0, false, {
                 fileName: "[project]/src/app/component/LogoutButton.js",
-                lineNumber: 32,
+                lineNumber: 43,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/component/LogoutButton.js",
-            lineNumber: 30,
+            lineNumber: 41,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/component/LogoutButton.js",
-        lineNumber: 29,
+        lineNumber: 40,
         columnNumber: 5
     }, this);
 }
