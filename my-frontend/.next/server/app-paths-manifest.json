@@ -1,0 +1,8 @@
+{
+  "/papers/submit/page": "app/papers/submit/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/papers/page": "app/papers/page.js",
+  "/login/page": "app/login/page.js",
+  "/register/page": "app/register/page.js"
+}

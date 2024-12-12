@@ -1,0 +1,6 @@
+[
+  {
+    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!api|static|.*.(?:png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|ico)).*$))(\\\\.json)?[\\/#\\?]?$",
+    "originalSource": "/((?!api|static|.*.(?:png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|ico)).*$)"
+  }
+]
