@@ -3,16 +3,32 @@
   "middleware": {
     "/": {
       "files": [
-        "server/edge/chunks/_09a70f._.js",
-        "server/edge/chunks/[root of the server]__28202e._.js",
-        "server/edge/chunks/edge-wrapper_5983f8.js"
+        "server/edge/chunks/_e2fc67._.js",
+        "server/edge/chunks/[root of the server]__defe9d._.js",
+        "server/edge/chunks/edge-wrapper_f2e72e.js"
       ],
       "name": "middleware",
       "page": "/",
       "matchers": [
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!api|static|.*.(?:png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|ico)).*$))(\\\\.json)?[\\/#\\?]?$",
-          "originalSource": "/((?!api|static|.*.(?:png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|ico)).*$)"
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/(\\/?index|\\/?index\\\\.json))?[\\/#\\?]?$",
+          "originalSource": "/"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/papers\\/submit(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/papers/submit"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/papers(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/papers"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/login(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/login"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/register(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/register"
         }
       ],
       "wasm": [],
@@ -20,9 +36,9 @@
       "env": {
         "__NEXT_BUILD_ID": "development",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "0u2IXBORsBr8KF8km1BpklY6d1xH4Gsmnge44/OA7XQ=",
-        "__NEXT_PREVIEW_MODE_ID": "43acb70c0b1c3856aac6516fe6df984a",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "d68c421e3915b54903df2a625adda1900e741a1e0bbfea375092fd7785ac5e9e",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "75f65272606f5f8a1024a741de4e0d2c3dde4289f6a04d549ffd3530039f769b"
+        "__NEXT_PREVIEW_MODE_ID": "e65194c84641da822f19b54623cb2f8e",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "d45e61c3a542e003cca940033212a5549dce287a1f4792c81ae55fe1ac7f52ca",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "5243b0ead9ef4d5859df286812c638d35c4592f7a39ac9cbed99410372da83a0"
       }
     }
   },

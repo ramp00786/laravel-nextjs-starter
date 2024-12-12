@@ -10,10 +10,22 @@ import Link from 'next/link';
 export default function Login() {
     const { register, handleSubmit } = useForm();
     const router = useRouter()
+
+
+    const setCookie = (name, value, days) => {
+        const expires = new Date();
+        expires.setDate(expires.getDate() + days);
+        document.cookie = `${name}=${value}; path=/; expires=${expires.toUTCString()}; Secure`;
+    };
+
+
     const onSubmit = async (data) => {
         try {
             const response = await axios.post('/login', data);
             localStorage.setItem('auth_token', response.data.token);
+            // Set the token in a cookie
+            setCookie('auth_token', response.data.token, 7); // Cookie expires in 7 days
+
             router.push('/papers', { scroll: false })
         } catch (error) {
             console.error(error);

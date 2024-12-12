@@ -2,6 +2,6 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/middleware.js"],"sourcesContent":["// middleware.js\r\nimport { NextResponse } from 'next/server';\r\n\r\nexport function middleware(req) {\r\n  console.log('Middleware executed:', req.nextUrl.pathname); \r\n  console.log('Request headers:', req.headers); \r\n\r\n  // Your authentication logic here (e.g., token check)\r\n  return NextResponse.next(); \r\n}\r\n\r\nexport const config = {\r\n  matcher: ['/((?!api|static|.*\\.(?:png|jpg|jpeg|gif|svg|css|js|woff|woff2|ttf|eot|ico)).*$)'],\r\n};"],"names":[],"mappings":"AAAA,gBAAgB;;;;;AAChB;AAAA;;AAEO,SAAS,WAAW,GAAG;IAC5B,QAAQ,GAAG,CAAC,wBAAwB,IAAI,OAAO,CAAC,QAAQ;IACxD,QAAQ,GAAG,CAAC,oBAAoB,IAAI,OAAO;IAE3C,qDAAqD;IACrD,OAAO,qLAAA,CAAA,eAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;KAAkF;AAC9F"}},
-    {"offset": {"line": 42, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/middleware.js"],"sourcesContent":["import { NextResponse } from 'next/server'\r\n \r\n// This function can be marked `async` if using `await` inside\r\nexport function middleware(request) {\r\n  return NextResponse.redirect(new URL('/login', request.url))\r\n}\r\n \r\n// See \"Matching Paths\" below to learn more\r\nexport const config = {\r\n  matcher: ['/papers/submit'],\r\n}"],"names":[],"mappings":";;;;AAAA;AAAA;;AAGO,SAAS,WAAW,OAAO;IAChC,OAAO,qLAAA,CAAA,eAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,UAAU,QAAQ,GAAG;AAC5D;AAGO,MAAM,SAAS;IACpB,SAAS;QAAC;KAAiB;AAC7B"}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
 }
